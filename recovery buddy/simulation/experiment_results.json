@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "study_duration_weeks": 8,
+    "cohort_size_per_group": 10,
+    "total_synthetic_patients": 20,
+    "random_seed": 42,
+    "disclaimer": "Synthetic simulation results for prototype evaluation; not clinical evidence."
+  },
+  "summary_kpis": {
+    "participation_rate": {
+      "baseline": "53.4%",
+      "mvp": "85.1%",
+      "target": ">=75%",
+      "improvement_pct": "+59.4%"
+    },
+    "retention_rate_week8": {
+      "baseline": "46.5%",
+      "mvp": "79.6%",
+      "target": ">=70%",
+      "improvement_pct": "+71.2%"
+    },
+    "education_completion": {
+      "baseline": "41.6%",
+      "mvp": "77.9%",
+      "target": ">=65%",
+      "improvement_pct": "+87.3%"
+    },
+    "comprehension_score": {
+      "baseline": "47.8%",
+      "mvp": "87.6%",
+      "target": ">=75%",
+      "improvement_pct": "+83.3%"
+    },
+    "patient_satisfaction": {
+      "baseline": "2.83 / 5.0",
+      "mvp": "4.52 / 5.0",
+      "target": ">=4.0 / 5.0",
+      "improvement_pct": "+59.7%"
+    }
+  },
+  "weekly_progression": [
+    {
+      "week": 1,
+      "baseline_participation_pct": 82.4,
+      "mvp_participation_pct": 93.1,
+      "baseline_retention_pct": 99.1,
+      "mvp_retention_pct": 99.4,
+      "baseline_education_pct": 55.7,
+      "mvp_education_pct": 85.4,
+      "baseline_comprehension_pct": 52.8,
+      "mvp_comprehension_pct": 83.3,
+      "baseline_satisfaction": 3.38,
+      "mvp_satisfaction": 4.35
+    },
+    {
+      "week": 2,
+      "baseline_participation_pct": 70.2,
+      "mvp_participation_pct": 91.0,
+      "baseline_retention_pct": 88.1,
+      "mvp_retention_pct": 99.4,
+      "baseline_education_pct": 48.4,
+      "mvp_education_pct": 82.1,
+      "baseline_comprehension_pct": 49.4,
+      "mvp_comprehension_pct": 86.1,
+      "baseline_satisfaction": 3.16,
+      "mvp_satisfaction": 4.45
+    },
+    {
+      "week": 3,
+      "baseline_participation_pct": 60.9,
+      "mvp_participation_pct": 88.4,
+      "baseline_retention_pct": 79.4,
+      "mvp_retention_pct": 89.3,
+      "baseline_education_pct": 45.4,
+      "mvp_education_pct": 79.7,
+      "baseline_comprehension_pct": 48.2,
+      "mvp_comprehension_pct": 86.9,
+      "baseline_satisfaction": 2.97,
+      "mvp_satisfaction": 4.61
+    },
+    {
+      "week": 4,
+      "baseline_participation_pct": 52.9,
+      "mvp_participation_pct": 85.5,
+      "baseline_retention_pct": 70.1,
+      "mvp_retention_pct": 90.9,
+      "baseline_education_pct": 41.6,
+      "mvp_education_pct": 78.1,
+      "baseline_comprehension_pct": 48.7,
+      "mvp_comprehension_pct": 88.2,
+      "baseline_satisfaction": 2.87,
+      "mvp_satisfaction": 4.61
+    },
+    {
+      "week": 5,
+      "baseline_participation_pct": 46.6,
+      "mvp_participation_pct": 82.1,
+      "baseline_retention_pct": 58.9,
+      "mvp_retention_pct": 84.6,
+      "baseline_education_pct": 37.7,
+      "mvp_education_pct": 75.5,
+      "baseline_comprehension_pct": 46.2,
+      "mvp_comprehension_pct": 88.1,
+      "baseline_satisfaction": 2.73,
+      "mvp_satisfaction": 4.49
+    },
+    {
+      "week": 6,
+      "baseline_participation_pct": 40.6,
+      "mvp_participation_pct": 80.4,
+      "baseline_retention_pct": 49.1,
+      "mvp_retention_pct": 80.9,
+      "baseline_education_pct": 36.4,
+      "mvp_education_pct": 75.2,
+      "baseline_comprehension_pct": 45.3,
+      "mvp_comprehension_pct": 89.4,
+      "baseline_satisfaction": 2.53,
+      "mvp_satisfaction": 4.49
+    },
+    {
+      "week": 7,
+      "baseline_participation_pct": 39.5,
+      "mvp_participation_pct": 80.3,
+      "baseline_retention_pct": 50.2,
+      "mvp_retention_pct": 80.4,
+      "baseline_education_pct": 35.0,
+      "mvp_education_pct": 74.6,
+      "baseline_comprehension_pct": 45.5,
+      "mvp_comprehension_pct": 88.8,
+      "baseline_satisfaction": 2.56,
+      "mvp_satisfaction": 4.58
+    },
+    {
+      "week": 8,
+      "baseline_participation_pct": 34.1,
+      "mvp_participation_pct": 79.9,
+      "baseline_retention_pct": 46.5,
+      "mvp_retention_pct": 79.6,
+      "baseline_education_pct": 32.5,
+      "mvp_education_pct": 72.8,
+      "baseline_comprehension_pct": 46.3,
+      "mvp_comprehension_pct": 89.9,
+      "baseline_satisfaction": 2.45,
+      "mvp_satisfaction": 4.57
+    }
+  ]
+}

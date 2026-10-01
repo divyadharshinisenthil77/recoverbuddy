@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecoverBuddy – AI Post-Operative Recovery Platform</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="logo-area">
+            <div class="logo-icon">🩺</div>
+            <div>
+                <div class="logo-title">RecoverBuddy</div>
+                <div class="logo-subtitle">Post-Operative Recovery Engagement & Clinical Safety Platform</div>
+            </div>
+        </div>
+
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="patient-app">👤 Patient Portal</button>
+            <button class="nav-tab" data-tab="care-team">🏥 Care Team Dashboard</button>
+            <button class="nav-tab" data-tab="judge-demo">⚖️ Judge Demo Mode</button>
+            <button class="nav-tab" data-tab="experiment">📊 Experiment Analytics</button>
+        </nav>
+
+        <div class="mode-toggle-box">
+            <span id="mode-label" style="font-size:0.9rem; font-weight:700; color:#0284c7;">✨ RecoverBuddy Mode</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="mode-toggle" checked>
+                <span class="slider"></span>
+            </label>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- ==================== TAB 1: PATIENT APPLICATION ==================== -->
+        <div id="patient-app" class="tab-content active">
+
+            <!-- Safety Banner -->
+            <div class="disclaimer-banner">
+                <span style="font-size:1.5rem;">🛡️</span>
+                <div>
+                    <strong>Healthcare Safety Disclaimer:</strong> RecoverBuddy explains your self-reported recovery trends in simple terms and keeps you motivated. It does <em>not</em> diagnose conditions, prescribe medications, or replace your surgical care team. Concerning observations are automatically routed to human clinical staff.
+                </div>
+            </div>
+
+            <!-- Patient Greeting & KPI Row -->
+            <div class="grid-4" style="margin-bottom:1.5rem;">
+                <div class="kpi-box">
+                    <div class="kpi-title">Patient Profile</div>
+                    <div style="font-size:1.2rem; font-weight:700; margin-top:0.25rem;">Priya Sharma</div>
+                    <div class="kpi-sub">Total Knee Arthroplasty (Day 14)</div>
+                </div>
+                <div class="kpi-box recoverbuddy-feature">
+                    <div class="kpi-title">Engagement Score</div>
+                    <div class="kpi-value" id="patient-eng-score">85</div>
+                    <div class="kpi-sub">Participation & check-in consistency</div>
+                </div>
+                <div class="kpi-box recoverbuddy-feature">
+                    <div class="kpi-title">Active Streak</div>
+                    <div class="kpi-value" id="patient-streak-days" style="color:var(--success);">5</div>
+                    <div class="kpi-sub">Consecutive daily check-ins 🔥</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-title">Weekly Goal</div>
+                    <div style="font-size:1.1rem; font-weight:700; margin-top:0.4rem; color:var(--primary-dark);">7 / 7 Check-Ins</div>
+                    <div class="kpi-sub">Goal completed this week! 🎯</div>
+                </div>
+            </div>
+
+            <!-- Earned Badges Row -->
+            <div class="card recoverbuddy-feature" style="padding:1rem 1.5rem;">
+                <div style="display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+                    <strong>🏆 Earned Milestones:</strong>
+                    <div id="patient-badges" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+                        <span class="badge badge-primary">First Check-In</span>
+                        <span class="badge badge-primary">7-Day Reporter</span>
+                        <span class="badge badge-primary">Learning Starter</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Patient Grid: Daily Check-In & Feedback -->
+            <div class="grid-2">
+
+                <!-- Check-in Form Card -->
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">📝 Today's Recovery Check-In</div>
+                        <span class="badge badge-primary">Daily Update</span>
+                    </div>
+
+                    <form id="checkin-form">
+                        <!-- Pain Slider -->
+                        <div class="form-group">
+                            <label class="form-label">
+                                Pain Comfort Level (0 = No pain, 10 = Worst pain):
+                                <strong id="pain-value-display" style="color:var(--primary); font-size:1.2rem; margin-left:0.5rem;">4.0</strong>
+                            </label>
+                            <input type="range" id="pain-score-input" class="form-range" min="0" max="10" step="0.5" value="4.0">
+                            <div class="range-values">
+                                <span>0 (None)</span>
+                                <span>5 (Moderate)</span>
+                                <span>10 (Severe)</span>
+                            </div>
+                        </div>
+
+                        <!-- Temperature Input -->
+                        <div class="form-group">
+                            <label class="form-label" for="temp-input">Body Temperature (°C, optional):</label>
+                            <input type="number" id="temp-input" class="form-control" placeholder="e.g. 36.8" step="0.1" min="34.0" max="43.0" value="36.7">
+                        </div>
+
+                        <!-- Wound Observation -->
+                        <div class="form-group">
+                            <label class="form-label">Surgical Incision / Wound Observation:</label>
+                            <div class="radio-group">
+                                <label class="radio-card selected">
+                                    <input type="radio" name="wound_status" value="improving" checked>
+                                    <div>🌱 Improving</div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="wound_status" value="unchanged">
+                                    <div>⚖️ Unchanged</div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="wound_status" value="concerning">
+                                    <div>⚠️ Concerning</div>
+                                </label>
+                                <label class="radio-card">
+                                    <input type="radio" name="wound_status" value="not_observed">
+                                    <div>👁️ Not Observed</div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Medication & Activity Checkboxes -->
+                        <div class="form-group" style="display:flex; gap:1.5rem;">
+                            <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+                                <input type="checkbox" id="med-taken-checkbox" checked style="width:20px; height:20px;">
+                                <strong>Medications Taken</strong>
+                            </label>
+                            <label style="display:flex; align-items:center; gap:0.5rem; cursor:pointer;">
+                                <input type="checkbox" id="act-completed-checkbox" checked style="width:20px; height:20px;">
+                                <strong>Recovery Activity Done</strong>
+                            </label>
+                        </div>
+
+                        <!-- Notes -->
+                        <div class="form-group">
+                            <label class="form-label" for="checkin-notes">Personal Notes (optional):</label>
+                            <textarea id="checkin-notes" class="form-control" rows="2" placeholder="How did you feel during your morning movement?"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width:100%;">
+                            Submit Daily Check-In 📤
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Live Feedback & Notifications Column -->
+                <div>
+                    <!-- Feedback Container -->
+                    <div id="checkin-feedback-box" style="display:none; margin-bottom:1.5rem;"></div>
+
+                    <!-- Education Mini-Section -->
+                    <div class="card recoverbuddy-feature">
+                        <div class="card-header">
+                            <div class="card-title">📚 Recovery Learning Modules</div>
+                        </div>
+                        <div id="education-modules-container">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Notification Feed -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">🔔 Recent Reminders & Updates</div>
+                        </div>
+                        <div id="patient-notifications">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Recent Check-In History Table -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">📅 Past 7 Days Reporting History</div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Reported Pain</th>
+                                <th>Temperature</th>
+                                <th>Incision Status</th>
+                                <th>Medication</th>
+                                <th>Activity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-table-body">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==================== TAB 2: CARE TEAM DASHBOARD ==================== -->
+        <div id="care-team" class="tab-content">
+            <div class="card-header" style="margin-bottom:1.5rem;">
+                <div>
+                    <h2>👩‍⚕️ Surgical Care Team Follow-Up Hub</h2>
+                    <p style="color:var(--text-muted);">Manage post-op patient cohorts, resolve escalations, and monitor SLA compliance.</p>
+                </div>
+                <button class="btn btn-secondary" onclick="checkOverdueSLA()">
+                    ⏱️ Run Overdue SLA Check
+                </button>
+            </div>
+
+            <!-- Escalations & Follow-up Queue -->
+            <div class="card" style="border-left:5px solid var(--danger);">
+                <div class="card-header">
+                    <div class="card-title">🚨 Active Clinical Review & Escalation Queue</div>
+                    <span class="badge badge-danger">Human-in-the-Loop</span>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Escalation ID</th>
+                                <th>Patient</th>
+                                <th>Trigger Type</th>
+                                <th>Review Priority</th>
+                                <th>Assigned Staff</th>
+                                <th>Status</th>
+                                <th>SLA Due</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="careteam-escalation-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Patient Cohort Overview -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">👥 Monitored Patient Cohort</div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Patient / Procedure</th>
+                                <th>Assigned Nurse</th>
+                                <th>Last Check-In</th>
+                                <th>Reporting Status</th>
+                                <th>Latest Pain</th>
+                                <th>Incision Status</th>
+                                <th>Open Alerts</th>
+                            </tr>
+                        </thead>
+                        <tbody id="careteam-patient-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Detailed Follow-Up Action Tasks -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">📋 Follow-Up Task Accountability</div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Task ID</th>
+                                <th>Owner (Role)</th>
+                                <th>Required Follow-Up Action</th>
+                                <th>Due Date / SLA</th>
+                                <th>Status</th>
+                                <th>Escalation Level</th>
+                            </tr>
+                        </thead>
+                        <tbody id="careteam-followup-table">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ==================== TAB 3: JUDGE DEMO MODE ==================== -->
+        <div id="judge-demo" class="tab-content">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2>⚖️ Interactive Judge Demo Walkthrough</h2>
+                        <p style="color:var(--text-muted);">Test all key platform capabilities and edge-case handling with 1 click.</p>
+                    </div>
+                    <button class="btn btn-danger" onclick="resetDemoData()">
+                        🔄 Reset Demo Data (Priya Pristine)
+                    </button>
+                </div>
+
+                <p style="margin-bottom:1rem;">Select a recovery scenario below to simulate patient actions, feedback generation, and care team escalation flows:</p>
+
+                <div class="scenario-grid">
+                    <div class="scenario-btn" onclick="runDemoScenario('A_NORMAL')">
+                        <div class="scenario-title">Scenario A: Normal Progress</div>
+                        <div class="scenario-desc">Simulate steady pain reduction (4.0 ➔ 3.5), positive feedback explanation, and streak advancement.</div>
+                    </div>
+                    <div class="scenario-btn" onclick="runDemoScenario('B_MISSING')">
+                        <div class="scenario-title">Scenario B: Missing Check-In</div>
+                        <div class="scenario-desc">Simulate non-punitive reminder notification without patient shaming.</div>
+                    </div>
+                    <div class="scenario-btn" onclick="runDemoScenario('C_CONCERNING')">
+                        <div class="scenario-title">Scenario C: Concerning Observation</div>
+                        <div class="scenario-desc">Log wound='concerning' + temp=38.3°C. Verifies neutral patient notice and High-Priority Nurse Task creation.</div>
+                    </div>
+                    <div class="scenario-btn" onclick="runDemoScenario('D_NOTIF_FAIL')">
+                        <div class="scenario-title">Scenario D: Notification Failure</div>
+                        <div class="scenario-desc">Simulates retry exhaustion on SMS failure ➔ Auto-creates follow-up task for Care Coordinator.</div>
+                    </div>
+                    <div class="scenario-btn" onclick="runDemoScenario('E_OVERDUE')">
+                        <div class="scenario-title">Scenario E: Overdue SLA Breach</div>
+                        <div class="scenario-desc">Simulates SLA expiry ➔ State transitions to ESCALATED and reassigns to Clinical Lead Supervisor.</div>
+                    </div>
+                </div>
+
+                <!-- 5-Minute Judge Demo Script Guide -->
+                <div style="background:#f8fafc; border:1px solid var(--border); border-radius:8px; padding:1.25rem; margin-top:1rem;">
+                    <h3 style="color:var(--primary-dark); margin-bottom:0.5rem;">⏱️ 3-Minute Quick Demo Guide for Evaluators</h3>
+                    <ol style="margin-left:1.5rem; line-height:1.8;">
+                        <li><strong>Observe Baseline vs. RecoverBuddy:</strong> Use the top-right toggle switch to see how Baseline returns cold static text ("Data received") while RecoverBuddy generates plain-language progress explanations and streaks.</li>
+                        <li><strong>Test Safety Guardrails:</strong> Trigger <em>Scenario C</em>. Notice that the patient never receives an autonomous diagnosis like "You have an infection"; instead, an auditable High-Priority task is dispatched to Nurse Sarah.</li>
+                        <li><strong>Review Care Team Accountability:</strong> Switch to the <strong>Care Team Dashboard</strong> tab to inspect the real-time escalation queue, owner assignment, and 1-click task resolution.</li>
+                        <li><strong>Inspect Quantitative Evidence:</strong> Switch to the <strong>Experiment Analytics</strong> tab to view the reproducible 8-week longitudinal trial results and error diagnostics.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== TAB 4: EXPERIMENT ANALYTICS ==================== -->
+        <div id="experiment" class="tab-content">
+            <div class="card-header" style="margin-bottom:1.5rem;">
+                <div>
+                    <h2>📊 Longitudinal 8-Week Synthetic Experiment Results</h2>
+                    <p style="color:var(--text-muted);">Quantitative comparison: Baseline Cohort (N=10) vs. RecoverBuddy MVP Cohort (N=10) over 56 recovery days.</p>
+                </div>
+                <span class="badge badge-primary">Reproducible Seed: 42</span>
+            </div>
+
+            <!-- Experiment Summary KPI Cards -->
+            <div class="grid-3" style="margin-bottom:1.5rem;">
+                <div class="kpi-box">
+                    <div class="kpi-title">Participation Rate</div>
+                    <div class="kpi-value" id="kpi-part" style="font-size:1.5rem;">53.2% ➔ 84.8%</div>
+                    <div class="kpi-sub" id="kpi-part-gain" style="color:var(--success); font-weight:700;">+59.4% improvement</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-title">Week-8 Retention Rate</div>
+                    <div class="kpi-value" id="kpi-ret" style="font-size:1.5rem;">45.0% ➔ 80.0%</div>
+                    <div class="kpi-sub" id="kpi-ret-gain" style="color:var(--success); font-weight:700;">+77.8% gain</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-title">Comprehension Quiz Score</div>
+                    <div class="kpi-value" id="kpi-comp" style="font-size:1.5rem;">48.3% ➔ 87.8%</div>
+                    <div class="kpi-sub" id="kpi-comp-gain" style="color:var(--success); font-weight:700;">+81.8% gain</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-title">Education Completion</div>
+                    <div class="kpi-value" id="kpi-edu" style="font-size:1.5rem;">41.4% ➔ 77.8%</div>
+                    <div class="kpi-sub" id="kpi-edu-gain" style="color:var(--success); font-weight:700;">+87.9% gain</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-title">Patient Satisfaction</div>
+                    <div class="kpi-value" id="kpi-sat" style="font-size:1.5rem;">2.8 / 5 ➔ 4.6 / 5</div>
+                    <div class="kpi-sub" id="kpi-sat-gain" style="color:var(--success); font-weight:700;">+64.3% gain</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-title">Simulated Safety Breaches</div>
+                    <div class="kpi-value" style="color:var(--success); font-size:1.5rem;">0 / 1,120</div>
+                    <div class="kpi-sub" style="color:var(--success); font-weight:700;">100% Safety Filter Pass</div>
+                </div>
+            </div>
+
+            <!-- Weekly Longitudinal Table -->
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">📈 8-Week Longitudinal Progression Comparison</div>
+                </div>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Week</th>
+                                <th>Baseline Part. (%)</th>
+                                <th>MVP Part. (%)</th>
+                                <th>Baseline Ret. (%)</th>
+                                <th>MVP Ret. (%)</th>
+                                <th>Baseline Comp. (%)</th>
+                                <th>MVP Comp. (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="simulation-table-body">
+                            <!-- Populated via JS -->
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:0.85rem; color:var(--text-muted); margin-top:0.75rem;">
+                    * Note: Data generated from synthetic cohort simulation (N=20 patients, 56 days) for demonstration and hackathon validation; not real clinical evidence.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Quiz Modal -->
+    <div id="quiz-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1000;">
+        <div style="background:#ffffff; max-width:650px; margin:5% auto; padding:2rem; border-radius:12px; max-height:85vh; overflow-y:auto; position:relative;">
+            <button onclick="document.getElementById('quiz-modal').style.display='none'" style="position:absolute; top:1rem; right:1rem; border:none; background:none; font-size:1.5rem; cursor:pointer;">✖</button>
+            <div id="quiz-modal-body"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

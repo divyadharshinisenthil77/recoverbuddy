@@ -1,0 +1,21 @@
+patient_id,display_name,age_group,surgery_type,surgery_date,assigned_nurse_id,assigned_surgeon_id,caregiver_id,consent_status,archetype,created_at
+PAT_001_P_ADH,Priya Sharma,36-50,Total Knee Arthroplasty,2026-01-02T08:00:00,nurse_1,surgeon_1,,True,Highly Adherent,2026-01-02T08:00:00
+PAT_002_P_DIS,Marcus Johnson,51-65,Laparoscopic Cholecystectomy,2026-01-02T08:00:00,nurse_2,surgeon_2,,True,Gradually Disengaging,2026-01-02T08:00:00
+PAT_003_P_INA,Elena Rostova,65+,Hip Replacement,2026-01-02T08:00:00,nurse_3,surgeon_1,,True,Initially Engaged Then Inactive,2026-01-02T08:00:00
+PAT_004_P_EDR,David Chen,18-35,ACL Reconstruction,2026-01-03T08:00:00,nurse_1,surgeon_2,,True,Education Resistant,2026-01-03T08:00:00
+PAT_005_P_FAT,Fatima Al-Mansoor,36-50,Appendectomy,2026-01-04T08:00:00,nurse_2,surgeon_1,,True,Reminder Fatigued,2026-01-04T08:00:00
+PAT_006_P_IMP,James Wilson,51-65,Lumbar Discectomy,2026-01-02T08:00:00,nurse_3,surgeon_2,,True,Improving Recovery,2026-01-02T08:00:00
+PAT_007_P_IRR,Aisha Patel,18-35,Shoulder Arthroscopy,2026-01-03T08:00:00,nurse_1,surgeon_1,,True,Irregular Reporter,2026-01-03T08:00:00
+PAT_008_P_CGV,Carlos Mendoza,65+,Coronary Artery Bypass Graft (CABG),2026-01-03T08:00:00,nurse_2,surgeon_2,caregiver_8,True,Caregiver Supported,2026-01-03T08:00:00
+PAT_009_P_ADH,Sarah Jenkins,36-50,Thyroidectomy,2026-01-04T08:00:00,nurse_3,surgeon_1,,True,Highly Adherent,2026-01-04T08:00:00
+PAT_010_P_DIS,Kenji Sato,51-65,Inguinal Hernia Repair,2026-01-02T08:00:00,nurse_1,surgeon_2,,True,Gradually Disengaging,2026-01-02T08:00:00
+PAT_011_P_INA,Maria Garcia,65+,Total Knee Arthroplasty,2026-01-02T08:00:00,nurse_2,surgeon_1,,True,Initially Engaged Then Inactive,2026-01-02T08:00:00
+PAT_012_P_EDR,Liam O'Connor,18-35,Meniscus Repair,2026-01-04T08:00:00,nurse_3,surgeon_2,,True,Education Resistant,2026-01-04T08:00:00
+PAT_013_P_FAT,Amara Okafor,36-50,Hysterectomy,2026-01-03T08:00:00,nurse_1,surgeon_1,,True,Reminder Fatigued,2026-01-03T08:00:00
+PAT_014_P_IMP,Robert Taylor,51-65,Rotator Cuff Repair,2026-01-02T08:00:00,nurse_2,surgeon_2,,True,Improving Recovery,2026-01-02T08:00:00
+PAT_015_P_IRR,Zoe Dupont,18-35,Septoplasty,2026-01-03T08:00:00,nurse_3,surgeon_1,,True,Irregular Reporter,2026-01-03T08:00:00
+PAT_016_P_CGV,Vikram Singh,51-65,Total Hip Arthroplasty,2026-01-02T08:00:00,nurse_1,surgeon_2,caregiver_16,True,Caregiver Supported,2026-01-02T08:00:00
+PAT_017_P_ADH,Hanna Lindqvist,36-50,Cholecystectomy,2026-01-04T08:00:00,nurse_2,surgeon_1,,True,Highly Adherent,2026-01-04T08:00:00
+PAT_018_P_DIS,Ahmed Khalil,65+,Spinal Fusion,2026-01-03T08:00:00,nurse_3,surgeon_2,,True,Gradually Disengaging,2026-01-03T08:00:00
+PAT_019_P_INA,Patricia Miller,51-65,Mastectomy Reconstruction,2026-01-03T08:00:00,nurse_1,surgeon_1,,True,Initially Engaged Then Inactive,2026-01-03T08:00:00
+PAT_020_P_EDR,Tariq Hassan,36-50,Knee Arthroscopy,2026-01-02T08:00:00,nurse_2,surgeon_2,,True,Education Resistant,2026-01-02T08:00:00

@@ -1,0 +1,215 @@
+{
+  "error_taxonomy": {
+    "REMINDER_FATIGUE": {
+      "title": "Reminder Notification Fatigue",
+      "description": "Patients overwhelmed by daily push notifications stopped responding after day 10-14.",
+      "mitigation": "Adaptive notification throttling, automatic cooldown periods, and quiet-hour enforcement."
+    },
+    "CAREGIVER_DEPENDENCY": {
+      "title": "Caregiver Hand-off Delay",
+      "description": "Elderly patients reliant on family members missed reporting on days caregivers were unavailable.",
+      "mitigation": "Dual-access caregiver portal view, simplified 1-tap logging, and SMS check-in support."
+    },
+    "EDUCATION_FRICTION": {
+      "title": "Education Resistance / Reading Fatigue",
+      "description": "Patients with high daily check-in adherence avoided lengthy text educational modules.",
+      "mitigation": "Micro-learning cards with 3 bullet points max and 2-question visual comprehension checks."
+    },
+    "POST_OP_PAIN_DROPOFF": {
+      "title": "Drop-off After Initial Recovery Comfort",
+      "description": "Patients feeling better around week 3 assumed monitoring was no longer required.",
+      "mitigation": "Positive milestone reinforcement explaining why continuing reports until surgical discharge matters."
+    },
+    "CONFUSING_OBSERVATION_INPUT": {
+      "title": "Subjective Wound Uncertainty",
+      "description": "Patients felt hesitant choosing between 'improving' and 'concerning'.",
+      "mitigation": "Clear visual reference guides and reassurance that all flagged observations go to their nurse."
+    },
+    "NOTIFICATION_DELIVERY_FAILURE": {
+      "title": "Channel Delivery Dropouts",
+      "description": "In-app notifications unread when app was closed for several consecutive days.",
+      "mitigation": "Automated escalation to clinic staff for outreach follow-up upon 3 days of silence."
+    }
+  },
+  "patient_cohort_diagnostics": [
+    {
+      "patient_id": "PAT_001_P_ADH",
+      "display_name": "Priya Sharma",
+      "archetype": "Highly Adherent",
+      "identified_failure_modes": [],
+      "recommended_intervention": "Standard engagement flow."
+    },
+    {
+      "patient_id": "PAT_002_P_DIS",
+      "display_name": "Marcus Johnson",
+      "archetype": "Gradually Disengaging",
+      "identified_failure_modes": [
+        "POST_OP_PAIN_DROPOFF",
+        "REMINDER_FATIGUE"
+      ],
+      "recommended_intervention": "Positive milestone reinforcement explaining why continuing reports until surgical discharge matters."
+    },
+    {
+      "patient_id": "PAT_003_P_INA",
+      "display_name": "Elena Rostova",
+      "archetype": "Initially Engaged Then Inactive",
+      "identified_failure_modes": [
+        "POST_OP_PAIN_DROPOFF",
+        "REMINDER_FATIGUE"
+      ],
+      "recommended_intervention": "Positive milestone reinforcement explaining why continuing reports until surgical discharge matters."
+    },
+    {
+      "patient_id": "PAT_004_P_EDR",
+      "display_name": "David Chen",
+      "archetype": "Education Resistant",
+      "identified_failure_modes": [
+        "EDUCATION_FRICTION"
+      ],
+      "recommended_intervention": "Micro-learning cards with 3 bullet points max and 2-question visual comprehension checks."
+    },
+    {
+      "patient_id": "PAT_005_P_FAT",
+      "display_name": "Fatima Al-Mansoor",
+      "archetype": "Reminder Fatigued",
+      "identified_failure_modes": [
+        "REMINDER_FATIGUE",
+        "NOTIFICATION_DELIVERY_FAILURE"
+      ],
+      "recommended_intervention": "Adaptive notification throttling, automatic cooldown periods, and quiet-hour enforcement."
+    },
+    {
+      "patient_id": "PAT_006_P_IMP",
+      "display_name": "James Wilson",
+      "archetype": "Improving Recovery",
+      "identified_failure_modes": [],
+      "recommended_intervention": "Standard engagement flow."
+    },
+    {
+      "patient_id": "PAT_007_P_IRR",
+      "display_name": "Aisha Patel",
+      "archetype": "Irregular Reporter",
+      "identified_failure_modes": [
+        "CONFUSING_OBSERVATION_INPUT"
+      ],
+      "recommended_intervention": "Clear visual reference guides and reassurance that all flagged observations go to their nurse."
+    },
+    {
+      "patient_id": "PAT_008_P_CGV",
+      "display_name": "Carlos Mendoza",
+      "archetype": "Caregiver Supported",
+      "identified_failure_modes": [
+        "CAREGIVER_DEPENDENCY"
+      ],
+      "recommended_intervention": "Dual-access caregiver portal view, simplified 1-tap logging, and SMS check-in support."
+    },
+    {
+      "patient_id": "PAT_009_P_ADH",
+      "display_name": "Sarah Jenkins",
+      "archetype": "Highly Adherent",
+      "identified_failure_modes": [],
+      "recommended_intervention": "Standard engagement flow."
+    },
+    {
+      "patient_id": "PAT_010_P_DIS",
+      "display_name": "Kenji Sato",
+      "archetype": "Gradually Disengaging",
+      "identified_failure_modes": [
+        "POST_OP_PAIN_DROPOFF",
+        "REMINDER_FATIGUE"
+      ],
+      "recommended_intervention": "Positive milestone reinforcement explaining why continuing reports until surgical discharge matters."
+    },
+    {
+      "patient_id": "PAT_011_P_INA",
+      "display_name": "Maria Garcia",
+      "archetype": "Initially Engaged Then Inactive",
+      "identified_failure_modes": [
+        "POST_OP_PAIN_DROPOFF",
+        "REMINDER_FATIGUE"
+      ],
+      "recommended_intervention": "Positive milestone reinforcement explaining why continuing reports until surgical discharge matters."
+    },
+    {
+      "patient_id": "PAT_012_P_EDR",
+      "display_name": "Liam O'Connor",
+      "archetype": "Education Resistant",
+      "identified_failure_modes": [
+        "EDUCATION_FRICTION"
+      ],
+      "recommended_intervention": "Micro-learning cards with 3 bullet points max and 2-question visual comprehension checks."
+    },
+    {
+      "patient_id": "PAT_013_P_FAT",
+      "display_name": "Amara Okafor",
+      "archetype": "Reminder Fatigued",
+      "identified_failure_modes": [
+        "REMINDER_FATIGUE",
+        "NOTIFICATION_DELIVERY_FAILURE"
+      ],
+      "recommended_intervention": "Adaptive notification throttling, automatic cooldown periods, and quiet-hour enforcement."
+    },
+    {
+      "patient_id": "PAT_014_P_IMP",
+      "display_name": "Robert Taylor",
+      "archetype": "Improving Recovery",
+      "identified_failure_modes": [],
+      "recommended_intervention": "Standard engagement flow."
+    },
+    {
+      "patient_id": "PAT_015_P_IRR",
+      "display_name": "Zoe Dupont",
+      "archetype": "Irregular Reporter",
+      "identified_failure_modes": [
+        "CONFUSING_OBSERVATION_INPUT"
+      ],
+      "recommended_intervention": "Clear visual reference guides and reassurance that all flagged observations go to their nurse."
+    },
+    {
+      "patient_id": "PAT_016_P_CGV",
+      "display_name": "Vikram Singh",
+      "archetype": "Caregiver Supported",
+      "identified_failure_modes": [
+        "CAREGIVER_DEPENDENCY"
+      ],
+      "recommended_intervention": "Dual-access caregiver portal view, simplified 1-tap logging, and SMS check-in support."
+    },
+    {
+      "patient_id": "PAT_017_P_ADH",
+      "display_name": "Hanna Lindqvist",
+      "archetype": "Highly Adherent",
+      "identified_failure_modes": [],
+      "recommended_intervention": "Standard engagement flow."
+    },
+    {
+      "patient_id": "PAT_018_P_DIS",
+      "display_name": "Ahmed Khalil",
+      "archetype": "Gradually Disengaging",
+      "identified_failure_modes": [
+        "POST_OP_PAIN_DROPOFF",
+        "REMINDER_FATIGUE"
+      ],
+      "recommended_intervention": "Positive milestone reinforcement explaining why continuing reports until surgical discharge matters."
+    },
+    {
+      "patient_id": "PAT_019_P_INA",
+      "display_name": "Patricia Miller",
+      "archetype": "Initially Engaged Then Inactive",
+      "identified_failure_modes": [
+        "POST_OP_PAIN_DROPOFF",
+        "REMINDER_FATIGUE"
+      ],
+      "recommended_intervention": "Positive milestone reinforcement explaining why continuing reports until surgical discharge matters."
+    },
+    {
+      "patient_id": "PAT_020_P_EDR",
+      "display_name": "Tariq Hassan",
+      "archetype": "Education Resistant",
+      "identified_failure_modes": [
+        "EDUCATION_FRICTION"
+      ],
+      "recommended_intervention": "Micro-learning cards with 3 bullet points max and 2-question visual comprehension checks."
+    }
+  ],
+  "total_diagnosed": 20
+}
